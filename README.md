@@ -1,5 +1,7 @@
 # lint-file [![NPM version][npm-image]][npm-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/christophehurpeau/lint-file.svg)](https://greenkeeper.io/)
+
 Run lint-staged linters on a single file
 
 [![Dependency Status][daviddm-image]][daviddm-url]
