@@ -1,0 +1,55 @@
+{
+  "name": "lint-file",
+  "version": "0.0.0",
+  "description": "Run lint-staged linters on a single file",
+  "keywords": [],
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
+  "license": "ISC",
+  "repository": "git@github.com:christophehurpeau/lint-file.git",
+  "homepage": "https://github.com/christophehurpeau/lint-file",
+  "scripts": {
+    "clean": "rm -Rf docs dist",
+    "commitmsg": "commitlint -x @commitlint/config-conventional -e $GIT_PARAMS",
+    "lint": "eslint lib/",
+    "postcheckout": "yarnhook",
+    "postmerge": "yarnhook",
+    "postrewrite": "yarnhook",
+    "precommit": "./.git-hooks/pre-commit",
+    "preversion": "yarn run lint && pob-repository-check-clean",
+    "release": "pob-repository-check-clean && pob-release",
+    "version": "pob-version"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^6.1.2",
+    "@commitlint/config-conventional": "^6.1.2",
+    "eslint": "4.13.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-pob": "^17.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "pob-release": "^3.1.0",
+    "prettier": "^1.9.2",
+    "yarnhook": "^0.1.1"
+  },
+  "main": "./lib/index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "lint-staged": {
+    "package.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "lib/**/*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "lib/**/*.js": [
+      "eslint --fix --quiet",
+      "git add"
+    ]
+  }
+}
