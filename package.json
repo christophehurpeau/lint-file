@@ -1,10 +1,9 @@
 {
   "name": "lint-file",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Run lint-staged linters on a list of files",
   "keywords": [],
-  "author":
-    "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/lint-file.git",
   "homepage": "https://github.com/christophehurpeau/lint-file",
@@ -41,9 +40,18 @@
     "node": ">=6.0.0"
   },
   "lint-staged": {
-    "package.json": ["prettier --write", "git add"],
-    "lib/**/*.json": ["prettier --write", "git add"],
-    "lib/**/*.js": ["eslint --fix --quiet", "git add"]
+    "package.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "lib/**/*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "lib/**/*.js": [
+      "eslint --fix --quiet",
+      "git add"
+    ]
   },
   "dependencies": {
     "commander": "^2.14.1",
