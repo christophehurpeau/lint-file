@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+'use strict'
+
+const pkg = require('../package.json')
+const cmdline = require('commander')
+const debugLib = require('debug')
+
+const debug = debugLib('lint-file:bin')
+
+cmdline
+  .version(pkg.version)
+  .usage('[options] <file ...>')
+  .option('-c, --config [path]', 'Path to configuration file')
+  .option('-d, --debug', 'Enable debug mode')
+  .parse(process.argv)
+
+if (cmdline.debug) {
+  debugLib.enable('lint-file*')
+  debugLib.enable('lint-staged*')
+}
+
+debug('Running `lint-file@%s`', pkg.version)
+
+require('../lib')(console, cmdline.config, cmdline.args, cmdline.debug)

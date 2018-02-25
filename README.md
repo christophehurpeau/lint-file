@@ -1,6 +1,6 @@
 # lint-file [![NPM version][npm-image]][npm-url]
 
-Run lint-staged linters on a single file
+Run lint-staged linters on a list of files
 
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Dependency ci Status][dependencyci-image]][dependencyci-url]
@@ -8,15 +8,13 @@ Run lint-staged linters on a single file
 ## Install
 
 ```bash
-npm install --save lint-file
+npm install -g lint-file
 ```
 
-## Usage
+## Usage in a lint-staged configured project
 
-```js
-import lintFile from 'lint-file';
-
-console.log(lintFile);
+```bash
+lint-file <files>
 ```
 
 [npm-image]: https://img.shields.io/npm/v/lint-file.svg?style=flat-square
