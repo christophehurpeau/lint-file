@@ -1,3 +1,6 @@
 {
-  "extends": "pob/node-lts"
+  "extends": [
+    "pob",
+    "pob/node"
+  ]
 }
