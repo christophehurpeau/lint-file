@@ -47,7 +47,7 @@
     "cosmiconfig": "^4.0.0",
     "debug": "^3.1.0",
     "dedent": "^0.7.0",
-    "lint-staged": "^7.2.2",
+    "lint-staged": "^8.0.0",
     "listr": "^0.13.0"
   },
   "devDependencies": {
