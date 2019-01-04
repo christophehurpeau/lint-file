@@ -56,7 +56,7 @@
     "eslint": "5.9.0",
     "eslint-config-pob": "24.0.1",
     "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-node": "8.0.0",
+    "eslint-plugin-node": "8.0.1",
     "husky": "1.1.4",
     "pob-release": "^4.6.0",
     "prettier": "1.15.2",
