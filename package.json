@@ -7,40 +7,30 @@
   "license": "ISC",
   "repository": "git@github.com:christophehurpeau/lint-file.git",
   "homepage": "https://github.com/christophehurpeau/lint-file",
+  "engines": {
+    "node": ">=6.5.0"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "bin": "bin/lint-file",
   "scripts": {
-    "clean": "rm -Rf docs dist",
-    "commitmsg": "commitlint -x @commitlint/config-conventional -e $GIT_PARAMS",
+    "clean": "rm -Rf dist",
     "lint": "eslint lib/",
-    "postcheckout": "yarnhook",
-    "postmerge": "yarnhook",
-    "postrewrite": "yarnhook",
-    "precommit": "./.git-hooks/pre-commit",
     "preversion": "yarn run lint && pob-repository-check-clean",
     "release": "pob-repository-check-clean && pob-release",
     "version": "pob-version"
   },
-  "devDependencies": {
-    "@commitlint/cli": "^6.1.2",
-    "@commitlint/config-conventional": "^6.1.2",
-    "eslint": "4.13.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-config-pob": "^17.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-node": "^6.0.0",
-    "eslint-plugin-prettier": "^2.6.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.0.0",
-    "pob-release": "^3.1.0",
-    "prettier": "^1.9.2",
-    "yarnhook": "^0.1.1"
-  },
-  "main": "./lib/index.js",
-  "engines": {
-    "node": ">=6.0.0"
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS",
+      "post-checkout": "yarnhook",
+      "post-merge": "yarnhook",
+      "post-rewrite": "yarnhook",
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
-    "package.json": [
+    "{package.json,.eslintrc.json}": [
       "prettier --write",
       "git add"
     ],
@@ -53,12 +43,35 @@
       "git add"
     ]
   },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "arrowParens": "always"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "dependencies": {
-    "commander": "^2.14.1",
-    "cosmiconfig": "^4.0.0",
-    "debug": "^3.1.0",
+    "commander": "^2.19.0",
+    "cosmiconfig": "^5.0.7",
+    "debug": "^4.1.1",
     "dedent": "^0.7.0",
-    "lint-staged": "^7.0.0",
-    "listr": "^0.13.0"
+    "find-up": "^3.0.0",
+    "lint-staged": "^8.1.0",
+    "listr": "^0.14.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "7.3.1",
+    "@commitlint/config-conventional": "7.3.1",
+    "eslint": "5.12.0",
+    "eslint-config-pob": "24.0.3",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-node": "8.0.1",
+    "husky": "1.3.1",
+    "pob-release": "^4.6.3",
+    "prettier": "1.15.3",
+    "yarnhook": "0.3.0"
   }
 }

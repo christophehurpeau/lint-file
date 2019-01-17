@@ -1,9 +1,16 @@
-# lint-file [![NPM version][npm-image]][npm-url]
+<h3 align="center">
+  lint-file
+</h3>
 
-Run lint-staged linters on a list of files
+<p align="center">
+  Run lint-staged linters on a list of files
+</p>
 
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Dependency ci Status][dependencyci-image]][dependencyci-url]
+<p align="center">
+  <a href="https://npmjs.org/package/lint-file"><img src="https://img.shields.io/npm/v/lint-file.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/lint-file"><img src="https://david-dm.org/christophehurpeau/lint-file.svg?style=flat-square"></a>
+  <a href="https://dependencyci.com/github/christophehurpeau/lint-file"><img src="https://dependencyci.com/github/christophehurpeau/lint-file/badge?style=flat-square"></a>
+</p>
 
 ## Install
 
@@ -16,10 +23,3 @@ npm install -g lint-file
 ```bash
 lint-file <files>
 ```
-
-[npm-image]: https://img.shields.io/npm/v/lint-file.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/lint-file
-[daviddm-image]: https://david-dm.org/christophehurpeau/lint-file.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/christophehurpeau/lint-file
-[dependencyci-image]: https://dependencyci.com/github/christophehurpeau/lint-file/badge?style=flat-square
-[dependencyci-url]: https://dependencyci.com/github/christophehurpeau/lint-file
