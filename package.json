@@ -1,6 +1,6 @@
 {
   "name": "lint-file",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Run lint-staged linters on a list of files",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)",
