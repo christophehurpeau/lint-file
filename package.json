@@ -51,7 +51,7 @@
     "debug": "^4.1.1",
     "dedent": "^0.7.0",
     "find-up": "^3.0.0",
-    "lint-staged": "^8.1.0",
+    "lint-staged": "^10.0.0",
     "listr": "^0.14.3"
   },
   "devDependencies": {
