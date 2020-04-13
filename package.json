@@ -46,7 +46,7 @@
     "extends": ["@commitlint/config-conventional"]
   },
   "dependencies": {
-    "commander": "^2.19.0",
+    "commander": "^5.0.0",
     "cosmiconfig": "^5.0.7",
     "debug": "^4.1.1",
     "dedent": "^0.7.0",
